@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/26835727/README.md)
 # 🚀 LLM Bench Pipeline
 
 **🇺🇸 English** | [🇰🇷 한국어](README_KO.md)
