@@ -1,0 +1,560 @@
+{
+  "updated": "2026-04-17T05:09:56.541039",
+  "models": [
+    {
+      "name": "qwen3:0.6b",
+      "display_name": "Qwen 3 0.6B",
+      "param_billions": 0.6,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 1,
+      "recommended_vram_gb": 0,
+      "context_length": 32768,
+      "strengths": [
+        "lightweight",
+        "korean"
+      ],
+      "supports_korean": true,
+      "priority": 32
+    },
+    {
+      "name": "qwen2.5:0.5b",
+      "display_name": "Qwen 2.5 0.5B",
+      "param_billions": 0.5,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 1,
+      "recommended_vram_gb": 0,
+      "context_length": 32768,
+      "strengths": [
+        "lightweight",
+        "korean"
+      ],
+      "supports_korean": true,
+      "priority": 28
+    },
+    {
+      "name": "llama3.2:1b",
+      "display_name": "Llama 3.2 1B",
+      "param_billions": 1.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 1.5,
+      "recommended_vram_gb": 0,
+      "context_length": 131072,
+      "strengths": [
+        "fast",
+        "reasoning"
+      ],
+      "supports_korean": false,
+      "priority": 35
+    },
+    {
+      "name": "qwen3:1.7b",
+      "display_name": "Qwen 3 1.7B",
+      "param_billions": 1.7,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 2,
+      "recommended_vram_gb": 0,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding"
+      ],
+      "supports_korean": true,
+      "priority": 48
+    },
+    {
+      "name": "qwen2.5:1.5b",
+      "display_name": "Qwen 2.5 1.5B",
+      "param_billions": 1.5,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 2,
+      "recommended_vram_gb": 0,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding"
+      ],
+      "supports_korean": true,
+      "priority": 42
+    },
+    {
+      "name": "gemma3:1b",
+      "display_name": "Gemma 3 1B",
+      "param_billions": 1.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 1.5,
+      "recommended_vram_gb": 0,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "multimodal"
+      ],
+      "supports_korean": false,
+      "priority": 38
+    },
+    {
+      "name": "gemma4:e2b",
+      "display_name": "Gemma 4 E2B",
+      "param_billions": 2.3,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 4,
+      "recommended_vram_gb": 0,
+      "context_length": 131072,
+      "strengths": [
+        "reasoning",
+        "multimodal",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 50
+    },
+    {
+      "name": "llama3.2:3b",
+      "display_name": "Llama 3.2 3B",
+      "param_billions": 3.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 3,
+      "recommended_vram_gb": 0,
+      "context_length": 131072,
+      "strengths": [
+        "reasoning",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 46
+    },
+    {
+      "name": "phi4-mini:3.8b",
+      "display_name": "Phi-4 Mini 3.8B",
+      "param_billions": 3.8,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 3,
+      "recommended_vram_gb": 0,
+      "context_length": 16384,
+      "strengths": [
+        "reasoning",
+        "coding",
+        "math"
+      ],
+      "supports_korean": false,
+      "priority": 52
+    },
+    {
+      "name": "qwen3:4b",
+      "display_name": "Qwen 3 4B",
+      "param_billions": 4.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 3.5,
+      "recommended_vram_gb": 4,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding"
+      ],
+      "supports_korean": true,
+      "priority": 60
+    },
+    {
+      "name": "gemma3:4b",
+      "display_name": "Gemma 3 4B",
+      "param_billions": 4.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 3.5,
+      "recommended_vram_gb": 4,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "multimodal"
+      ],
+      "supports_korean": false,
+      "priority": 55
+    },
+    {
+      "name": "gemma4:e4b",
+      "display_name": "Gemma 4 E4B",
+      "param_billions": 4.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 6,
+      "recommended_vram_gb": 8,
+      "context_length": 131072,
+      "strengths": [
+        "reasoning",
+        "multimodal",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 68
+    },
+    {
+      "name": "phi4-mini",
+      "display_name": "Phi-4 Mini",
+      "param_billions": 3.8,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 3,
+      "recommended_vram_gb": 4,
+      "context_length": 16384,
+      "strengths": [
+        "reasoning",
+        "coding",
+        "math"
+      ],
+      "supports_korean": false,
+      "priority": 54
+    },
+    {
+      "name": "qwen3:8b",
+      "display_name": "Qwen 3 8B",
+      "param_billions": 8.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 5.5,
+      "recommended_vram_gb": 6,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding",
+        "general"
+      ],
+      "supports_korean": true,
+      "priority": 78
+    },
+    {
+      "name": "qwen2.5:7b",
+      "display_name": "Qwen 2.5 7B",
+      "param_billions": 7.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 5,
+      "recommended_vram_gb": 6,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding",
+        "general"
+      ],
+      "supports_korean": true,
+      "priority": 72
+    },
+    {
+      "name": "llama3.1:8b",
+      "display_name": "Llama 3.1 8B",
+      "param_billions": 8.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 5.5,
+      "recommended_vram_gb": 6,
+      "context_length": 131072,
+      "strengths": [
+        "reasoning",
+        "coding",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 68
+    },
+    {
+      "name": "gemma3:12b",
+      "display_name": "Gemma 3 12B",
+      "param_billions": 12.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 8,
+      "recommended_vram_gb": 8,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "multimodal",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 74
+    },
+    {
+      "name": "deepseek-r1:7b",
+      "display_name": "DeepSeek R1 7B",
+      "param_billions": 7.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 5,
+      "recommended_vram_gb": 6,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "math",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 76
+    },
+    {
+      "name": "mistral:7b",
+      "display_name": "Mistral 7B v0.3",
+      "param_billions": 7.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 5,
+      "recommended_vram_gb": 6,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 58
+    },
+    {
+      "name": "gemma2:9b",
+      "display_name": "Gemma 2 9B",
+      "param_billions": 9.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 6,
+      "recommended_vram_gb": 6,
+      "context_length": 8192,
+      "strengths": [
+        "reasoning",
+        "summarization"
+      ],
+      "supports_korean": false,
+      "priority": 56
+    },
+    {
+      "name": "qwen2.5-coder:7b",
+      "display_name": "Qwen 2.5 Coder 7B",
+      "param_billions": 7.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 5,
+      "recommended_vram_gb": 6,
+      "context_length": 32768,
+      "strengths": [
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 62
+    },
+    {
+      "name": "qwen3:14b",
+      "display_name": "Qwen 3 14B",
+      "param_billions": 14.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 10,
+      "recommended_vram_gb": 10,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding",
+        "general"
+      ],
+      "supports_korean": true,
+      "priority": 88
+    },
+    {
+      "name": "qwen2.5:14b",
+      "display_name": "Qwen 2.5 14B",
+      "param_billions": 14.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 10,
+      "recommended_vram_gb": 10,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding",
+        "general"
+      ],
+      "supports_korean": true,
+      "priority": 82
+    },
+    {
+      "name": "phi4:14b",
+      "display_name": "Phi-4 14B",
+      "param_billions": 14.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 10,
+      "recommended_vram_gb": 10,
+      "context_length": 16384,
+      "strengths": [
+        "reasoning",
+        "math",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 84
+    },
+    {
+      "name": "deepseek-r1:14b",
+      "display_name": "DeepSeek R1 14B",
+      "param_billions": 14.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 10,
+      "recommended_vram_gb": 10,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "math",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 86
+    },
+    {
+      "name": "gemma3:27b",
+      "display_name": "Gemma 3 27B",
+      "param_billions": 27.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 18,
+      "recommended_vram_gb": 16,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "multimodal"
+      ],
+      "supports_korean": false,
+      "priority": 80
+    },
+    {
+      "name": "gemma4:26b",
+      "display_name": "Gemma 4 26B (MoE)",
+      "param_billions": 26.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 12,
+      "recommended_vram_gb": 16,
+      "context_length": 262144,
+      "strengths": [
+        "reasoning",
+        "multimodal",
+        "coding",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 89
+    },
+    {
+      "name": "qwen3:30b-a3b",
+      "display_name": "Qwen 3 30B-A3B (MoE)",
+      "param_billions": 30.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 12,
+      "recommended_vram_gb": 10,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding",
+        "general"
+      ],
+      "supports_korean": true,
+      "priority": 87
+    },
+    {
+      "name": "qwen2.5-coder:14b",
+      "display_name": "Qwen 2.5 Coder 14B",
+      "param_billions": 14.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 10,
+      "recommended_vram_gb": 10,
+      "context_length": 32768,
+      "strengths": [
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 79
+    },
+    {
+      "name": "llama3.3:70b",
+      "display_name": "Llama 3.3 70B (Q4)",
+      "param_billions": 70.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 40,
+      "recommended_vram_gb": 40,
+      "context_length": 131072,
+      "strengths": [
+        "reasoning",
+        "coding",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 92
+    },
+    {
+      "name": "gemma4:31b",
+      "display_name": "Gemma 4 31B",
+      "param_billions": 31.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 22,
+      "recommended_vram_gb": 24,
+      "context_length": 262144,
+      "strengths": [
+        "reasoning",
+        "multimodal",
+        "coding",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 91
+    },
+    {
+      "name": "qwen3:32b",
+      "display_name": "Qwen 3 32B",
+      "param_billions": 32.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 22,
+      "recommended_vram_gb": 20,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "korean",
+        "coding",
+        "general"
+      ],
+      "supports_korean": true,
+      "priority": 90
+    },
+    {
+      "name": "deepseek-r1:32b",
+      "display_name": "DeepSeek R1 32B",
+      "param_billions": 32.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 22,
+      "recommended_vram_gb": 20,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "math",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 89
+    },
+    {
+      "name": "mixtral:8x7b",
+      "display_name": "Mixtral 8x7B",
+      "param_billions": 46.7,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 26,
+      "recommended_vram_gb": 24,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "coding",
+        "general"
+      ],
+      "supports_korean": false,
+      "priority": 75
+    },
+    {
+      "name": "deepseek-r1:70b",
+      "display_name": "DeepSeek R1 70B",
+      "param_billions": 70.0,
+      "quant": "Q4_K_M",
+      "min_ram_gb": 42,
+      "recommended_vram_gb": 40,
+      "context_length": 32768,
+      "strengths": [
+        "reasoning",
+        "math",
+        "coding"
+      ],
+      "supports_korean": false,
+      "priority": 94
+    }
+  ]
+}
