@@ -501,14 +501,35 @@ class HardwareDetector:
         p.gpus = gpus
 
     def _detect_gpus_windows(self) -> list:
-        """Windows: PowerShell로 GPU 감지"""
+        """Windows: PowerShell로 GPU 감지 (레지스트리에서 정확한 VRAM 읽기)"""
         gpus = []
         try:
+            # 1단계: GPU 이름, 드라이버, PNPDeviceID 가져오기
+            # 2단계: 레지스트리에서 64비트 VRAM (qwMemorySize) 읽기
+            # AdapterRAM은 uint32라 4GB 이상에서 오버플로우됨
             ps_cmd = (
-                "Get-CimInstance Win32_VideoController | "
-                "ForEach-Object { $_.Name + '|' + $_.AdapterRAM + '|' + $_.DriverVersion + '|' + $_.VideoProcessor }"
+                "$regPath = 'HKLM:\\SYSTEM\\CurrentControlSet\\Control\\Class\\{4d36e968-e325-11ce-bfc1-08002be10318}';"
+                "Get-CimInstance Win32_VideoController | ForEach-Object {"
+                "  $name = $_.Name;"
+                "  $driver = $_.DriverVersion;"
+                "  $adapterRAM = $_.AdapterRAM;"
+                "  $pnpId = $_.PNPDeviceID;"
+                "  $gpuDevId = ($pnpId -split '&')[0..1] -join '&';"
+                "  $qwMem = 0;"
+                "  try {"
+                "    $regEntries = Get-ItemProperty -Path \"$regPath\\0*\" -ErrorAction SilentlyContinue;"
+                "    foreach ($entry in $regEntries) {"
+                "      if ($entry.MatchingDeviceId -and $entry.MatchingDeviceId -like \"$gpuDevId*\") {"
+                "        $val = $entry.'HardwareInformation.qwMemorySize';"
+                "        if ($val -and $val -gt 0) { $qwMem = $val; break }"
+                "      }"
+                "    }"
+                "  } catch {};"
+                "  $vram = if ($qwMem -gt 0) { $qwMem } elseif ($adapterRAM -gt 0) { $adapterRAM } else { 0 };"
+                "  $name + '|' + $vram + '|' + $driver + '|' + $pnpId"
+                "}"
             )
-            out = _ps_run(ps_cmd, timeout=15)
+            out = _ps_run(ps_cmd, timeout=20)
 
             for line in out.splitlines():
                 if not line.strip():
@@ -519,14 +540,11 @@ class HardwareDetector:
 
                 gpu = GPUInfo(name=name)
 
-                # VRAM (AdapterRAM은 4GB 이상에서 오버플로우될 수 있음)
+                # VRAM (이제 64비트 값이므로 4GB+ 정확히 감지)
                 if len(parts) >= 2 and parts[1].strip().isdigit():
-                    adapter_ram = int(parts[1].strip())
-                    if adapter_ram > 0:
-                        gpu.vram_mb = adapter_ram // (1024 * 1024)
-                    # 4GB 이상 GPU에서 32bit 오버플로우 보정
-                    if gpu.vram_mb < 0 or (gpu.vram_mb > 0 and gpu.vram_mb < 256):
-                        gpu.vram_mb = 0  # nvidia-smi로 재감지
+                    vram_bytes = int(parts[1].strip())
+                    if vram_bytes > 0:
+                        gpu.vram_mb = vram_bytes // (1024 * 1024)
 
                 # Driver
                 if len(parts) >= 3:
